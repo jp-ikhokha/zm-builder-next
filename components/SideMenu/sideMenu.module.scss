@@ -1,0 +1,34 @@
+
+@import "/styles/colors.scss";
+
+.sideMenuContainer{
+    background-color: $color-secondary;
+    width: 40%;
+    position: fixed;
+    right:0px;
+    top:0px;
+    height: 100vh;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.sideNavItems{
+    display: flex;
+    flex-direction: column;
+
+    
+    .menuItem{
+        font-size: 32px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        color: $color-primary;
+        font-family: 'Cormorant' , sans-serif;
+    }
+}
