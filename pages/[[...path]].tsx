@@ -15,22 +15,35 @@ import Navbar from "@components/NavBar/navBar"
 import SideMenu from "@components/SideMenu/sideMenu"
 import { useState } from 'react';
 
+import client from "../apollo-client";
+import { GET_MAIN_MENU_LINKS } from 'queries/getMainMenuLinks'
+
 
 export async function getStaticProps({
   params,
 }: GetStaticPropsContext<{ path: string[] }>) {
-  const page = await resolveBuilderContent('page', {
+  
+  
+  const page = resolveBuilderContent('page', {
     urlPath: '/' + (params?.path?.join('/') || ''),
   })
 
+  const mainMenu: any = client.query({
+    query: GET_MAIN_MENU_LINKS,
+  });
+
+
+  const responses = await Promise.all([page, mainMenu])
+
   return {
     props: {
-      page,
+      page: responses[0],
+      mainMenuLinks: responses[1],
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
-    // - At most once every 5 seconds
-    revalidate: true,
+    // - At most once every 10 seconds
+    revalidate: 10,
   }
 }
 
@@ -47,7 +60,7 @@ export async function getStaticPaths() {
 }
 
 export default function Path({
-  page,
+  page, mainMenuLinks
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter()
   if (router.isFallback) {
@@ -68,6 +81,8 @@ export default function Path({
 
   const { title, description, image } = page?.data! || {}
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+  console.log(mainMenuLinks)
   
   return (
     <>
@@ -90,9 +105,9 @@ export default function Path({
       />
       <Header>
             <Navbar toggleMenu={() => setMenuIsOpen(!menuIsOpen)} menuIsOpen={menuIsOpen} />
-            <SideMenu menuIsOpen={menuIsOpen}/>
+            <SideMenu menuIsOpen={menuIsOpen} menuLinks={mainMenuLinks.data.mainMenuLinks}/>
       </Header>       
-      <BuilderComponent renderLink={Link} model="page" content={page} />
+      <BuilderComponent renderLink={Link} model="page" content={page} />      
       <Footer />
     </>
   )
