@@ -12,6 +12,7 @@ import Header from '@components/Header/Header'
 import Footer from '@components/Footer/Footer'
 
 import Navbar from "@components/NavBar/navBar"
+import Hamburger from '@components/Hamburger/hamburger'
 import SideMenu from "@components/SideMenu/sideMenu"
 import { useState } from 'react';
 
@@ -81,8 +82,6 @@ export default function Path({
 
   const { title, description, image } = page?.data! || {}
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-
-  console.log(mainMenuLinks)
   
   return (
     <>
@@ -104,9 +103,10 @@ export default function Path({
         }}
       />
       <Header>
-            <Navbar toggleMenu={() => setMenuIsOpen(!menuIsOpen)} menuIsOpen={menuIsOpen} />
-            <SideMenu menuIsOpen={menuIsOpen} menuLinks={mainMenuLinks.data.mainMenuLinks}/>
-      </Header>       
+        <Navbar />            
+      </Header>
+      <Hamburger toggleMenu={() => setMenuIsOpen(!menuIsOpen)} menuIsOpen={menuIsOpen} />
+      <SideMenu menuIsOpen={menuIsOpen} menuLinks={mainMenuLinks.data.mainMenuLinks} />    
       <BuilderComponent renderLink={Link} model="page" content={page} />      
       <Footer />
     </>

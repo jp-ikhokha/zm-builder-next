@@ -1,22 +1,32 @@
-@import "/styles/colors.scss";
+@import '/styles/colors.scss';
+@import '/styles/breakpoints.scss';
 
+.navbarContainer {
+  display: grid;
+  grid-template-columns: [nav-left] 100px [nav-center] 1fr [nav-right] 100px;
+  align-items: center;
+  height: 70px;
+  margin-left: 15px;
+  margin-right: 15px;
+  position: relative;
+  z-index: 1002;
 
-.navbarContainer{
-    display: grid;
-    grid-template-columns: [nav-left] 100px [nav-center] 1fr [nav-right] 100px;
-    align-items: center;
-    height: 70px;
-    border-bottom: 1px solid $color-secondary;
-    margin-left: 15px;
-    margin-right: 15px;
-    position: relative;
-    z-index: 2;
+  .siteLogo {
+    grid-column-start: nav-center;
+    justify-self: center;
+    color: white;
+    background-image: url(/images/zm-logo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 326px;
+    height: 115px;
+    background-position-y: bottom;
 
-
-    .siteLogo{
-        grid-column-start: nav-center;
-        justify-self: center;
-        color: white;
+    @media screen and (max-width: $mobile) {
+      grid-column-start: nav-left;
+      background-image: url(/images/site-logo-symbol-name.svg);
+      background-position-y: center;
+      justify-self: flex-start;
     }
-    
+  }
 }

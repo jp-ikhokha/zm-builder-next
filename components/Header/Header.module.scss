@@ -1,6 +1,15 @@
-@import '/styles/colors.scss';
+@import '../../styles/colors.scss';
 
 .headerContainer {
-  background-color: $color-primary;
-  height: 80px;
+  background-image: url('/images/header-bg-top.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 140px;
+  width: 100%;
+  position: fixed;
+  z-index: 1002;
+  top: 0;
+  background-position: top;
+  background-size: auto;
+  background-position-y: -20px;
 }
