@@ -1,4 +1,5 @@
 @import '../../styles/colors.scss';
+@import '/styles/breakpoints.scss';
 
 .headerContainer {
   background-image: url('/images/header-bg-top.svg');
@@ -12,4 +13,9 @@
   background-position: top;
   background-size: auto;
   background-position-y: -20px;
+
+  @media screen and (max-width: $mobile) {
+    background-size: cover;
+    height: 90px;
+  }
 }

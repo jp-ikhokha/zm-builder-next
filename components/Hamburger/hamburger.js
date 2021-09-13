@@ -10,7 +10,6 @@ const Hamburger = ({ toggleMenu, menuIsOpen }) => {
       </span>
       <style jsx>{`
         .hamburger {
-          padding: 15px 15px;
           display: inline-block;
           cursor: pointer;
           transition-property: opacity, filter;
@@ -24,7 +23,7 @@ const Hamburger = ({ toggleMenu, menuIsOpen }) => {
           margin: 0;
           overflow: visible;
           position: fixed;
-          top: 30px;
+          top: 20px;
           right: 20px;
           z-index: 1003;
         }
