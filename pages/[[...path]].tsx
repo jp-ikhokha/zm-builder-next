@@ -8,6 +8,9 @@ import Head from 'next/head'
 import { resolveBuilderContent } from '@lib/resolve-builder-content'
 import { Link } from '@components/Link/Link'
 
+/* custom builder blocks */
+require('../components/CircleLeftMediaRight/CircleLeftMediaRight')
+
 import Header from '@components/Header/Header'
 import Footer from '@components/Footer/Footer'
 

@@ -1,0 +1,52 @@
+@import '../../styles/colors.scss';
+
+.circleLeftMediaRight__Container {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+
+  &__leftBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    background-image: url('/images/circle-bg-blue.svg');
+    width: 647px;
+    height: 611px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &__content {
+      padding-left: 8rem;
+      padding-right: 14rem;
+      h2 {
+        font-size: 3.4rem;
+        margin-top: 0rem;
+        margin-bottom: 3rem;
+        color: $color-primary-contrast;
+      }
+
+      p {
+      }
+    }
+  }
+
+  &__rightBlock {
+    position: relative;
+
+    &__media {
+      position: absolute;
+      top: 50%;
+      transform: translate(-125px, -50%);
+      width: 592px;
+      height: 326px;
+
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
