@@ -103,3 +103,20 @@ p {
   background-size: cover;
   background-position: top;
 }
+
+/* buttons */
+.zmbtn {
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+
+.zmbtn.btn-primary {
+  background-color: #5e877f;
+  color: white;
+  border-radius: 2rem;
+  display: block;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 5px 5px;
+}

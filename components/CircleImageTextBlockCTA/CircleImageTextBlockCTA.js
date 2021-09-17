@@ -1,6 +1,7 @@
 import styles from './CircleImageTextBlockCTA.module.scss'
 import { Builder } from '@builder.io/react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const CircleImageTextBlockCTA = ({
   heading,
@@ -8,6 +9,8 @@ export const CircleImageTextBlockCTA = ({
   image = '/images/placeholder.webp',
   reverse,
   imgBgColor,
+  hasLink,
+  zmButton,
 }) => {
   return (
     <>
@@ -26,6 +29,15 @@ export const CircleImageTextBlockCTA = ({
             <h2>{heading}</h2>
             <div dangerouslySetInnerHTML={{ __html: excerpt }}></div>
           </div>
+          {hasLink && (
+            <Link
+              href={zmButton.linkUrl !== undefined ? zmButton.linkUrl : '/'}
+            >
+              <a className={`zmbtn btn-${zmButton.variant}`}>
+                {zmButton.linkLabel}
+              </a>
+            </Link>
+          )}
         </div>
         <div className={styles.circleImageTextBlockCTA__Container__mediaBlock}>
           <div
@@ -84,6 +96,43 @@ Builder.registerComponent(CircleImageTextBlockCTA, {
       name: 'reverse',
       type: 'boolean',
       defaultValue: false,
+    },
+    {
+      name: 'reverse',
+      type: 'boolean',
+      defaultValue: false,
+    },
+    {
+      name: 'hasLink',
+      type: 'boolean',
+      defaultValue: false,
+    },
+    {
+      name: 'zmButton',
+      type: 'object',
+      showIf: (options) => {
+        return options.get('hasLink')
+      },
+      subFields: [
+        {
+          name: 'linkLabel',
+          type: 'string',
+          defaultValue: 'link label',
+          required: true,
+        },
+        {
+          name: 'linkUrl',
+          type: 'url',
+          defaultValue: '/',
+          required: true,
+        },
+        {
+          name: 'variant',
+          type: 'string',
+          defaultValue: 'primary',
+          enum: ['primary', 'secondary'],
+        },
+      ],
     },
   ],
 })
