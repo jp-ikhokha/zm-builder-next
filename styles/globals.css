@@ -59,12 +59,13 @@ h6 {
 
 .h1,
 h1 {
-  font-size: 4.375rem;
+  margin-top: 2rem;
+  font-size: 5.4rem;
 }
 
 .h2,
 h2 {
-  font-size: 3.75rem;
+  font-size: 3.8rem;
 }
 
 .h3,
@@ -93,7 +94,7 @@ p {
 }
 
 /* builder blocks global */
-.builder-blocks > .builder-block:first-child::after {
+.builder-block.hero:first-child::after {
   content: '';
   background-image: url(/images/header-bg-bottom.svg);
   width: 100%;

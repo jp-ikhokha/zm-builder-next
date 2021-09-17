@@ -10,6 +10,10 @@ import { Link } from '@components/Link/Link'
 
 /* custom builder blocks */
 require('../components/CircleLeftMediaRight/CircleLeftMediaRight')
+require('../components/SectionCurves/SectionCurve')
+require('../components/CircleImageTextBlockCTA/CircleImageTextBlockCTA')
+require('../components/RowBreaker/RowBreaker')
+
 
 import Header from '@components/Header/Header'
 import Footer from '@components/Footer/Footer'

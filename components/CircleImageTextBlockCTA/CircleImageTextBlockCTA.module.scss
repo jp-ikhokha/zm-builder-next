@@ -1,0 +1,46 @@
+@import '../../styles/colors.scss';
+
+.circleImageTextBlockCTA__Container {
+  display: flex;
+  min-height: 400px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  &__textBlock {
+    width: 50%;
+    padding: 40px;
+    box-sizing: border-box;
+    &__content {
+      h2 {
+      }
+
+      p {
+      }
+    }
+  }
+
+  &__mediaBlock {
+    width: 50%;
+    position: relative;
+
+    .imageBg {
+      width: 556px;
+      height: 376px;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .theImage {
+      width: 527px;
+      height: 354px;
+      position: relative;
+      top: 14px;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+}
