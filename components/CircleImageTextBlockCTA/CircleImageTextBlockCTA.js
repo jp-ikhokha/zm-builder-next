@@ -53,14 +53,7 @@ export const CircleImageTextBlockCTA = ({
               left: reverse ? '24px' : '4px',
             }}
           >
-            <Image
-              src={image}
-              alt={heading}
-              layout="fill"
-              width="527px"
-              height="354px"
-              quality={100}
-            />
+            <Image src={image} alt={heading} layout="fill" quality={100} />
           </div>
         </div>
       </div>

@@ -21,7 +21,7 @@ const Footer = ({ footerLinks }) => {
       <div className={styles.footerTopCurve}>
         <SectionCurve />
       </div>
-      <footer className="footer">
+      <footer className={styles.footer}>
         <div className={styles.footer__topRow}>
           <div className={`${styles.footerColA} ${styles.footerCol}`}>
             <h3>{footerLinks[0].data.footerCol1.colTitle}</h3>

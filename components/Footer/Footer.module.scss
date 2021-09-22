@@ -5,15 +5,16 @@
   margin-top: 50px;
   svg {
     path {
-      fill: $color-off-white;
+      fill: $color-primary-contrast;
     }
   }
 }
 
 .footer {
   margin-top: 10px;
+  color: $color-off-white;
   &__topRow {
-    background-color: $color-off-white;
+    background-color: $color-primary-contrast;
     display: grid;
     grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
     grid-template-areas: 'footerA footerB footerC footerD footerE';
@@ -70,7 +71,7 @@
           height: 30px;
           path,
           circle {
-            fill: $color-secondary-contrast;
+            fill: $color-off-white;
           }
 
           &:hover {
@@ -89,6 +90,6 @@
   }
 
   &__btmRow {
-    background-color: #577a7c;
+    background-color: $color-primary;
   }
 }
